@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BookiDays - المنصة الأولى لحجوزات الفنادق في حلب، سوريا. انضم إلينا الآن.">
+    <title>BookiDays | مستقبل حجوزات الفنادق في حلب</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0056b3; /* الأزرق الملكي الخاص بالهوية */
+            --accent-color: #003d82;
+            --bg-white: #ffffff;
+            --bg-light: #f4f7fa;
+            --text-main: #2d3436;
+            --text-muted: #636e72;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-white);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* الهيدر */
+        header {
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 86, 179, 0.1);
+        }
+
+        .brand-name {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+        }
+
+        .location-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* قسم البطولة (Hero Section) */
+        .hero {
+            padding: 100px 8% 160px;
+            text-align: center;
+            background: radial-gradient(circle at top right, var(--bg-light) 0%, var(--bg-white) 100%);
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--text-main);
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        /* النموذج (The Form Card) */
+        .form-card {
+            max-width: 600px;
+            margin: -120px auto 80px;
+            background: var(--bg-white);
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0, 86, 179, 0.08);
+            position: relative;
+            z-index: 10;
+            border: 1px solid rgba(0, 86, 179, 0.05);
+        }
+
+        .form-header {
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .form-header h2 {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .input-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #edf2f7;
+            border-radius: 12px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: #fcfdfe;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 8px 20px rgba(0, 86, 179, 0.2);
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(0, 86, 179, 0.3);
+        }
+
+        /* تذييل الصفحة */
+        footer {
+            padding: 60px 8%;
+            background: var(--bg-light);
+            text-align: center;
+            border-top: 1px solid #edf2f7;
+        }
+
+        .footer-logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* تحسينات للشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .form-card { padding: 30px 20px; margin: -100px 20px 50px; }
+            header { padding: 15px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-name">BookiDays</div>
+        <div class="location-tag">قريباً في حلب 📍</div>
+    </header>
+
+    <section class="hero">
+        <h1>BookiDays <span>المنصة الرائدة لتمكين فنادق حلب</span></h1>
+        <p>نحن نبني الجسر الرقمي بين فندقك والسياح. كن شريكاً مؤسساً في أول منصة حجز فندقي تنطلق من قلب حلب لتخدم العالم.</p>
+    </section>
+
+    <div class="form-card">
+        <div class="form-header">
+            <h2>تسجيل اهتمام الشركاء</h2>
+            <p>سجل بيانات فندقك للحصول على أولوية الظهور وعمولات 0% للشهر الأول.</p>
+        </div>
+        
+        <form action="#" method="POST">
+            <div class="input-group">
+                <label>اسم المنشأة الفندقية</label>
+                <input type="text" name="hotel_name" placeholder="مثال: فندق شهباء حلب" required>
+            </div>
+            
+            <div class="input-group">
+                <label>عنوان الفندق (الحي)</label>
+                <input type="text" name="area" placeholder="مثال: العزيزية، المحافظة..." required>
+            </div>
+
+            <div class="input-group">
+                <label>اسم المدير المسؤول</label>
+                <input type="text" name="manager_name" placeholder="الاسم الكامل" required>
+            </div>
+
+            <div class="input-group">
+                <label>رقم الواتساب للتواصل</label>
+                <input type="tel" name="phone" placeholder="09XX XXX XXX" dir="ltr" required>
+            </div>
+
+            <button type="submit" class="submit-btn">احجز مكانك في القائمة المسبقة</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-logo">BookiDays</div>
+        <p style="margin-bottom: 10px;">مشروع رائد يهدف لدعم السياحة والقطاع الفندقي في مدينة حلب.</p>
+        <div class="copyright">
+            &copy; 2026 جميع الحقوق محفوظة لمنصة BookiDays
+        </div>
+    </footer>
+
+</body>
+</html>
