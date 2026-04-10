@@ -3,58 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BookiDays - المنصة الأولى لحجوزات الفنادق في حلب. سجل منشأتك الآن.">
     <title>BookiDays | انضم إلينا في حلب</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700;800&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-blue: #0056b3; --white: #ffffff; --bg-light: #f8fbff; }
-        body { font-family: 'Tajawal', sans-serif; background-color: var(--white); text-align: center; margin: 0; }
-        header { padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        :root {
+            --primary-blue: #0056b3;
+            --dark-blue: #003d82;
+            --white: #ffffff;
+            --bg-light: #f8fbff;
+            --text-main: #2d3436;
+            --text-muted: #636e72;
+            --success-green: #28a745;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--white);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
         .logo { font-size: 26px; font-weight: 800; color: var(--primary-blue); text-decoration: none; }
-        .hero { padding: 60px 8%; background: linear-gradient(180deg, var(--bg-light) 0%, var(--white) 100%); }
-        .form-wrapper { max-width: 550px; margin: -50px auto 60px; background: var(--white); padding: 40px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0, 86, 179, 0.1); border: 1px solid #eef2f6; }
-        .input-group { margin-bottom: 20px; text-align: right; }
-        label { display: block; margin-bottom: 8px; font-weight: 600; }
-        input { width: 100%; padding: 14px; border: 2px solid #edf2f7; border-radius: 10px; font-family: 'Tajawal'; }
-        .btn-submit { width: 100%; padding: 16px; background: var(--primary-blue); color: white; border: none; border-radius: 10px; font-size: 1.1rem; font-weight: 700; cursor: pointer; }
-        
-        /* تصميم رسالة الشكر المخفية */
-        #thanks-message { display: none; padding: 40px; text-align: center; }
-        .success-icon { font-size: 50px; color: #28a745; margin-bottom: 20px; }
+        .badge { background: var(--primary-blue); color: white; padding: 4px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: bold; }
+
+        .hero {
+            padding: 80px 8% 120px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-light) 0%, var(--white) 100%);
+        }
+
+        .hero h1 { font-size: 2.8rem; color: var(--primary-blue); margin-bottom: 15px; }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+
+        .form-wrapper {
+            max-width: 550px;
+            margin: -80px auto 60px;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 86, 179, 0.1);
+            border: 1px solid #eef2f6;
+            position: relative;
+        }
+
+        .form-header { text-align: center; margin-bottom: 35px; }
+        .form-header h2 { font-size: 1.6rem; color: var(--text-main); }
+
+        .input-group { margin-bottom: 22px; text-align: right; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.95rem; color: var(--text-main); }
+
+        input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #edf2f7;
+            border-radius: 12px;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1rem;
+            transition: 0.3s;
+            background: #fcfdfe;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.1);
+            background: white;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 8px 15px rgba(0, 86, 179, 0.2);
+        }
+
+        .btn-submit:hover { background: var(--dark-blue); transform: translateY(-2px); }
+        .btn-submit:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+
+        /* رسالة النجاح */
+        #thanks-message { display: none; padding: 20px; text-align: center; }
+        .success-icon { font-size: 60px; color: var(--success-green); margin-bottom: 20px; }
+        #status { font-size: 0.9rem; margin-top: 15px; color: #d63031; }
+
+        footer { text-align: center; padding: 40px; background: var(--bg-light); color: var(--text-muted); font-size: 0.9rem; }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .form-wrapper { margin: -60px 20px 40px; padding: 25px; }
+        }
     </style>
 </head>
 <body>
 
-    <header><a href="#" class="logo">BookiDays</a></header>
+    <header>
+        <a href="#" class="logo">BookiDays</a>
+        <span class="badge">حلب 📍 قريباً</span>
+    </header>
 
     <section class="hero">
-        <h1>مستقبل الفنادق في حلب</h1>
-        <p>انضم إلى القائمة المسبقة لمنصة <strong>BookiDays</strong></p>
+        <h1>مستقبل فنادق حلب يبدأ هنا</h1>
+        <p>انضم إلى القائمة المسبقة لمنصة <strong>BookiDays</strong> لتعزيز تواجدك الرقمي وزيادة حجوزاتك.</p>
     </section>
 
     <div class="form-wrapper">
         <form id="bookidays-form" action="https://formspree.io/f/xqegvwwz" method="POST">
-            <div class="input-group">
-                <label>اسم المنشأة الفندقية</label>
-                <input type="text" name="hotel_name" required>
+            <div class="form-header">
+                <h2>تسجيل بيانات المنشأة</h2>
             </div>
+
             <div class="input-group">
-                <label>رقم الواتساب</label>
-                <input type="tel" name="phone" placeholder="09XXXXXXXX" dir="ltr" required>
+                <label>اسم الفندق</label>
+                <input type="text" name="اسم_الفندق" placeholder="مثال: فندق شهباء حلب" required>
             </div>
+
+            <div class="input-group">
+                <label>المنطقة في حلب</label>
+                <input type="text" name="المنطقة" placeholder="العزيزية، السليمانية، الجميلية..." required>
+            </div>
+
+            <div class="input-group">
+                <label>اسم المسؤول</label>
+                <input type="text" name="اسم_المسؤول" placeholder="الاسم الكامل للمدير أو صاحب المنشأة" required>
+            </div>
+
+            <div class="input-group">
+                <label>رقم التواصل (واتساب)</label>
+                <input type="tel" name="رقم_التواصل" placeholder="09XXXXXXXX" dir="ltr" required>
+            </div>
+
             <div class="input-group">
                 <label>البريد الإلكتروني</label>
-                <input type="email" name="email" required>
+                <input type="email" name="الايميل" placeholder="example@mail.com" required>
             </div>
-            <button type="submit" id="submit-button" class="btn-submit">تأكيد الانضمام</button>
+
+            <button type="submit" id="submit-button" class="btn-submit">تأكيد الانضمام للقائمة</button>
             <p id="status"></p>
         </form>
 
         <div id="thanks-message">
             <div class="success-icon">✅</div>
-            <h2>تم استلام طلبكم بنجاح!</h2>
-            <p>شكراً لاهتمامكم بـ BookiDays حلب. سنتواصل معكم قريباً.</p>
+            <h2 style="color: var(--primary-blue); margin-bottom: 15px;">تم استلام بياناتكم!</h2>
+            <p style="color: var(--text-muted);">شكراً لانضمامكم إلى <strong>BookiDays</strong> حلب. سيقوم فريقنا بالتواصل معكم عبر رقم التواصل المزود قريباً لتنسيق الخطوات القادمة.</p>
+            <br>
+            <a href="index.html" style="color: var(--primary-blue); text-decoration: none; font-weight: bold;">تحديث الصفحة</a>
         </div>
     </div>
+
+    <footer>
+        <p><strong>BookiDays</strong> &copy; 2026 - المنصة الأولى المخصصة لدعم القطاع الفندقي في حلب</p>
+    </footer>
 
     <script>
         var form = document.getElementById("bookidays-form");
@@ -64,32 +183,35 @@
           var status = document.getElementById("status");
           var data = new FormData(event.target);
           var submitButton = document.getElementById("submit-button");
+          var thanksMessage = document.getElementById("thanks-message");
           
-          submitButton.innerText = "جاري الإرسال...";
+          submitButton.innerText = "جاري إرسال البيانات...";
           submitButton.disabled = true;
 
           fetch(event.target.action, {
             method: form.method,
             body: data,
-            headers: {
-                'Accept': 'application/json'
-            }
+            headers: { 'Accept': 'application/json' }
           }).then(response => {
             if (response.ok) {
-              // إخفاء الفورم وإظهار رسالة الشكر
+              // إخفاء الفورم وإظهار رسالة النجاح
               form.style.display = "none";
-              document.getElementById("thanks-message").style.display = "block";
+              thanksMessage.style.display = "block";
             } else {
               response.json().then(data => {
                 if (Object.hasOwn(data, 'errors')) {
                   status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
                 } else {
-                  status.innerHTML = "عذراً! حدثت مشكلة في الإرسال.";
+                  status.innerHTML = "عذراً! حدث خطأ أثناء الإرسال.";
                 }
+                submitButton.disabled = false;
+                submitButton.innerText = "تأكيد الانضمام للقائمة";
               })
             }
           }).catch(error => {
-            status.innerHTML = "عذراً! حدثت مشكلة تقنية.";
+            status.innerHTML = "هناك مشكلة في الاتصال، يرجى المحاولة لاحقاً.";
+            submitButton.disabled = false;
+            submitButton.innerText = "تأكيد الانضمام للقائمة";
           });
         }
         form.addEventListener("submit", handleSubmit)
