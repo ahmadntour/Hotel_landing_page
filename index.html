@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BookiDays - المنصة الأولى لحجوزات الفنادق في حلب، سوريا. انضم إلينا الآن في القائمة المسبقة.">
-    <title>BookiDays | منصة فنادق حلب</title>
+    <meta name="description" content="BookiDays - المنصة الأولى لحجوزات الفنادق في حلب، سوريا. سجل منشأتك الآن.">
+    <title>BookiDays | انضم إلينا في حلب</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;700;800&display=swap" rel="stylesheet">
     
@@ -18,11 +18,7 @@
             --text-muted: #636e72;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             font-family: 'Tajawal', sans-serif;
@@ -31,7 +27,6 @@
             line-height: 1.6;
         }
 
-        /* الهيدر */
         header {
             padding: 20px 8%;
             display: flex;
@@ -44,12 +39,7 @@
             z-index: 100;
         }
 
-        .logo {
-            font-size: 26px;
-            font-weight: 800;
-            color: var(--primary-blue);
-            text-decoration: none;
-        }
+        .logo { font-size: 26px; font-weight: 800; color: var(--primary-blue); text-decoration: none; }
 
         .badge {
             background: var(--primary-blue);
@@ -60,27 +50,14 @@
             font-weight: bold;
         }
 
-        /* قسم العنوان (Hero) */
         .hero {
             padding: 80px 8% 140px;
             text-align: center;
             background: linear-gradient(180deg, var(--bg-light) 0%, var(--white) 100%);
         }
 
-        .hero h1 {
-            font-size: 2.8rem;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-        }
+        .hero h1 { font-size: 2.8rem; color: var(--primary-blue); margin-bottom: 15px; }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* نموذج التسجيل (Form Card) */
         .form-wrapper {
             max-width: 550px;
             margin: -100px auto 60px;
@@ -91,27 +68,11 @@
             border: 1px solid #eef2f6;
         }
 
-        .form-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+        .form-header { text-align: center; margin-bottom: 30px; }
 
-        .form-header h2 {
-            font-size: 1.5rem;
-            color: var(--text-main);
-            margin-bottom: 8px;
-        }
+        .input-group { margin-bottom: 20px; text-align: right; }
 
-        .input-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
+        label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
 
         input {
             width: 100%;
@@ -140,24 +101,12 @@
             font-weight: 700;
             cursor: pointer;
             transition: 0.3s;
-            margin-top: 10px;
         }
 
-        .btn-submit:hover {
-            background: var(--dark-blue);
-            transform: translateY(-2px);
-        }
+        .btn-submit:hover { background: var(--dark-blue); transform: translateY(-2px); }
 
-        /* التذييل */
-        footer {
-            text-align: center;
-            padding: 40px;
-            background: var(--bg-light);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
+        footer { text-align: center; padding: 40px; background: var(--bg-light); color: var(--text-muted); font-size: 0.9rem; }
 
-        /* للهواتف */
         @media (max-width: 600px) {
             .hero h1 { font-size: 1.8rem; }
             .form-wrapper { margin: -80px 20px 40px; padding: 25px; }
@@ -167,13 +116,13 @@
 <body>
 
     <header>
-        <a href="#" class="logo">BookiDays</a>
+        <a href="index.html" class="logo">BookiDays</a>
         <span class="badge">حلب 📍 قريباً</span>
     </header>
 
     <section class="hero">
         <h1>مستقبل الفنادق في حلب</h1>
-        <p>انضم إلى القائمة المسبقة لمنصة <strong>BookiDays</strong> واحصل على عمولات 0% وميزات حصرية عند الإطلاق الرسمي.</p>
+        <p>انضم إلى القائمة المسبقة لمنصة <strong>BookiDays</strong> واحصل على عمولات 0% وميزات حصرية عند الإطلاق.</p>
     </section>
 
     <div class="form-wrapper">
@@ -184,40 +133,42 @@
 
         <form action="https://formspree.io/f/xqegvwwz" method="POST">
             
-            <div class="input-group">
-                <label for="hotel">اسم المنشأة الفندقية</label>
-                <input type="text" id="hotel" name="hotel_name" placeholder="مثال: فندق شهباء حلب" required>
-            </div>
-
-            <div class="input-group">
-                <label for="location">المنطقة في حلب</label>
-                <input type="text" id="location" name="area" placeholder="العزيزية، السليمانية، إلخ..." required>
-            </div>
-
-            <div class="input-group">
-                <label for="name">اسم المسؤول عن التواصل</label>
-                <input type="text" id="name" name="contact_person" placeholder="الاسم الثلاثي" required>
-            </div>
-
-            <div class="input-group">
-                <label for="whatsapp">رقم الواتساب</label>
-                <input type="tel" id="whatsapp" name="phone_number" placeholder="09XX XXX XXX" dir="ltr" required>
-            </div>
-
-            <div class="input-group">
-                <label for="email">البريد الإلكتروني</label>
-                <input type="email" id="email" name="email" placeholder="example@mail.com" required>
-            </div>
-
-            <input type="hidden" name="_subject" value="تسجيل جديد في BookiDays حلب!">
+            <input type="hidden" name="_next" value="thanks.html">
+            
             <input type="hidden" name="_language" value="ar">
+            <input type="hidden" name="_subject" value="تسجيل فندق جديد - BookiDays حلب">
+
+            <div class="input-group">
+                <label>اسم المنشأة الفندقية</label>
+                <input type="text" name="اسم_الفندق" placeholder="مثال: فندق شهباء حلب" required>
+            </div>
+
+            <div class="input-group">
+                <label>المنطقة في حلب</label>
+                <input type="text" name="المنطقة" placeholder="العزيزية، السليمانية، إلخ..." required>
+            </div>
+
+            <div class="input-group">
+                <label>اسم المسؤول</label>
+                <input type="text" name="اسم_المسؤول" placeholder="الاسم الكامل" required>
+            </div>
+
+            <div class="input-group">
+                <label>رقم الواتساب</label>
+                <input type="tel" name="رقم_التواصل" placeholder="09XXXXXXXX" dir="ltr" required>
+            </div>
+
+            <div class="input-group">
+                <label>البريد الإلكتروني</label>
+                <input type="email" name="الايميل" placeholder="email@example.com" required>
+            </div>
 
             <button type="submit" class="btn-submit">تأكيد الانضمام للقائمة</button>
         </form>
     </div>
 
     <footer>
-        <p><strong>BookiDays</strong> &copy; 2026 - المنصة الأولى المخصصة لفنادق حلب</p>
+        <p><strong>BookiDays</strong> &copy; 2026 - جميع الحقوق محفوظة</p>
     </footer>
 
 </body>
